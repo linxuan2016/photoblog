@@ -1,0 +1,13 @@
+ 
+body{
+    background: #C8E652
+}
+
+
+#my_picture {
+    background:rgba(100,100,100, 0.3);
+    width:900px; 
+    box-shadow: 1px 1px 3px #333;
+    display: inline-block;
+}
+

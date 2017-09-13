@@ -1,0 +1,19 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login</title>
+</head>
+<body>
+   <div class="login-page">
+  <div class="form">
+    <form method="POST" class="register-form">
+        {% csrf_token %} {{ form.as_p }}
+
+      <button>create</button>
+      <p class="message">Already registered? <a href="/login/">Sign In</a></p>
+    </form>
+  </div>
+</div>
+</body>
+</html>
