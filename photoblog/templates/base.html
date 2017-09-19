@@ -32,19 +32,25 @@
     <body>
         {% cms_toolbar %}
         <div class="container">
-	    {% static_placeholder 'logo' %}
-        <span class="user">
+        <div class="logo">{% static_placeholder 'logo' %}</div>
+        <div class="user">
         {% if request.user.is_authenticated%}
             Hello {{request.user.username}} <a href="{% url "logout" %}">Logout</a>
         {% else %}
             <a href="{% url "login" %}">Login</a>
         {% endif %}
-        </span>
+        </div>
+        <div class="navigator">
             <ul class="nav">
-                {% show_menu 0 100 0 100 %}
+                {% show_menu 0 100 100 100 "menu/custom_menu.html" %}
             </ul>
+        <div>
+        <div class="content">
             {% block content %}{% endblock content %}
+        </div>
+        <div class="footer">
 	    {% static_placeholder 'footer' %}
+        </div>
         </div>
         {% render_block "js" %}
     </body>

@@ -11,3 +11,24 @@ body{
     display: inline-block;
 }
 
+.image-link-plugin {
+    background:rgba(100,100,100, 0.3);
+    width:300px;
+    float: left;
+    margin: 10px;
+    display: inline-block;
+    box-shadow: 2px 2px 6px #333; 
+   
+}
+
+
+.club_activities {
+    text-align: center;
+}
+.link-text {
+    text-align: center,left;
+}
+
+.footer {
+    clear: left;
+}

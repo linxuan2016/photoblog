@@ -4,10 +4,15 @@
 {% block title %}{% page_attribute "page_title" %}{% endblock title %}
 
 {% block content %}
+    <div class="video">
+        {% placeholder "video" %}
+    </div>
     <div class="club_info">
         {% placeholder "club_info" %}
+    <hr/>
     </div>
     <div class="club_activities">
+        <h3> Last activities </h3>
         {% placeholder "club_activities" %}
     </div>
 {% endblock content %}

@@ -17,7 +17,13 @@ class My_Pictures(CMSPlugin):
 
 
 
+class Image_Link(CMSPlugin):
+    name = models.CharField(max_length=200)
+    image = models.ImageField(upload_to="image_link")
+    text = models.CharField(max_length=200)
 
+    class Meta:
+        verbose_name = "Image Link"
 
-
-    
+    def __unicode__(self):
+        return "%s" % (self.name,)     

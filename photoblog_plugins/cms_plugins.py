@@ -19,5 +19,21 @@ class My_Pictures_Plugin(CMSPluginBase):
         })
         return context
 
-plugin_pool.register_plugin(My_Pictures_Plugin)
 
+class Image_Link_Plugin(CMSPluginBase):
+    text_enabled = True
+    model = Image_Link
+    name = "Image Link"
+    render_template = "image_link.html"
+    
+    def render(self, context, instance, placeholder):
+        context.update({
+            'name': instance.name,
+            'image': instance.image,
+            'text': instance.text
+        })
+        return context
+
+
+plugin_pool.register_plugin(My_Pictures_Plugin)
+plugin_pool.register_plugin(Image_Link_Plugin)
