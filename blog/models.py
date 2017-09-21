@@ -7,6 +7,8 @@ class Post(models.Model):
     category = models.ForeignKey("Category")
     content = models.TextField()
 
+    class Meta:
+        ordering = ['-date',]
 
 
 class Category(models.Model):

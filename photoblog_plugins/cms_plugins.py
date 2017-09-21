@@ -30,7 +30,8 @@ class Image_Link_Plugin(CMSPluginBase):
         context.update({
             'name': instance.name,
             'image': instance.image,
-            'text': instance.text
+            'text': instance.text,
+            'link_url': instance.link_url
         })
         return context
 

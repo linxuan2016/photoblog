@@ -24,7 +24,8 @@ def category(request, c_id):
 
 def blog(request):
     context = {}
-    posts = Post.objects.all()
+    posts = Post.objects.all().order_by('-date')[:5]
+
     context["posts"] = posts
 
     return render(request, "blog.html", context)

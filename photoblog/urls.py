@@ -22,6 +22,7 @@ urlpatterns += i18n_patterns(
     url(r'^admin/', include(admin.site.urls)),  # NOQA
     url(r'^', include('cms.urls')),
     url(r'^', include('django_login.urls')),
+    #url(r'^', include('blog.urls')),
 )
 
 # This is only needed when using runserver.

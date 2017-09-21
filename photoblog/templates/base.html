@@ -1,17 +1,24 @@
 {% load cms_tags menu_tags sekizai_tags %}
 {% load staticfiles %}
+<!DOCTYPE html>
 <html>
     <head>
         <title>{% block title %}This is my new project home page{% endblock title %}</title>
         <meta name="viewport" content="width=device-width,initial-scale=1">
+        <!--
         <link rel="stylesheet", type="text/css" href="{% static 'css/main.css' %}">
+        -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
         <style type="text/css">
             .nav {
                 padding-left: 0;
             }
             .nav li {
                 display: inline;
-                list-style-type: none;
+                list-style-type: upper-roman;
                 padding-right: 20px;
             }
             .container {
@@ -28,29 +35,35 @@
             }
         </style>
         {% render_block "css" %}
+
     </head>
     <body>
         {% cms_toolbar %}
-        <div class="container">
-        <div class="logo">{% static_placeholder 'logo' %}</div>
-        <div class="user">
-        {% if request.user.is_authenticated%}
-            Hello {{request.user.username}} <a href="{% url "logout" %}">Logout</a>
-        {% else %}
-            <a href="{% url "login" %}">Login</a>
-        {% endif %}
-        </div>
-        <div class="navigator">
-            <ul class="nav">
-                {% show_menu 0 100 100 100 "menu/custom_menu.html" %}
-            </ul>
-        <div>
-        <div class="content">
+        <div class="container-fluid">
+          <div class="jumbotron">
+          <h1>Welcome to my photoblog</h1>
+          </div>
+          <div class="row page-header">
+              <div class="col-sm-2">{% static_placeholder 'logo' %}</div>
+              <div class="col-sm-8">
+                <ul class="nav">
+                  {% show_menu 0 100 100 100 "menu/custom_menu.html" %}
+                </ul>
+              </div>
+              <div class="col-sm-2">
+                {% if request.user.is_authenticated%}
+                  Hello {{request.user.username}} <a href="{% url "logout" %}">Logout</a>
+                {% else %}
+                  <a href="{% url "login" %}">Login</a>
+                {% endif %}
+              </div>
+          </div>
+          <div class="content">
             {% block content %}{% endblock content %}
-        </div>
-        <div class="footer">
-	    {% static_placeholder 'footer' %}
-        </div>
+          </div>
+          <div class="footer" style="clear:left;">
+	        {% static_placeholder 'footer' %}
+          </div>
         </div>
         {% render_block "js" %}
     </body>

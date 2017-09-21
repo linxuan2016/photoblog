@@ -139,7 +139,6 @@ INSTALLED_APPS = (
     'filer',
     'mptt',
     'easy_thumbnails',
-    'aldryn_bootstrap3',
     'djangocms_column',
     'djangocms_link',
     'cmsplugin_filer_file',
@@ -195,6 +194,13 @@ CMS_PLACEHOLDER_CONF = {
 	'plugins': ['My_Pictures_Plugin'],
 	'limits': {
 	    'global': 1
+	}
+    },
+    'last_activities': {
+        'name': "Last Activities",
+	'plugins': ['Image_Link_Plugin'],
+	'limits': {
+	    'global': 6
 	}
     }
 }
