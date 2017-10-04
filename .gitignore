@@ -44,8 +44,7 @@ Thumbs.db
 *.bak
 *.swp
 *.swo
-*.db
-migrations/
-*.db
 setup.py
 src/aldryn-newsblog
+migrations/
+*.db
