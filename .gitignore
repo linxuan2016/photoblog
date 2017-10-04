@@ -22,6 +22,7 @@
 *.zip
 *.jpeg
 *.jpg
+*.png
 # Logs and databases #
 ######################
 *.log
@@ -46,5 +47,3 @@ Thumbs.db
 *.swo
 setup.py
 src/aldryn-newsblog
-migrations/
-*.db
