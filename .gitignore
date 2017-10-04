@@ -20,7 +20,8 @@
 *.rar
 *.tar
 *.zip
-
+*.jpeg
+*.jpg
 # Logs and databases #
 ######################
 *.log
@@ -42,4 +43,9 @@ Thumbs.db
 *.pyc
 *.bak
 *.swp
+*.swo
 *.db
+migrations/
+*.db
+setup.py
+src/aldryn-newsblog

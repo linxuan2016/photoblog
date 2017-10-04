@@ -3,7 +3,8 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>{% block title %}This is my new project home page{% endblock title %}</title>
+        {% block extrascript %}{% endblock %}
+        <title>{% block title %}MimiLand Homepage{% endblock title %}</title>
         <meta name="viewport" content="width=device-width,initial-scale=1">
         <!--
         <link rel="stylesheet", type="text/css" href="{% static 'css/main.css' %}">
@@ -11,6 +12,7 @@
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
 
         <style type="text/css">
             .nav {
@@ -33,6 +35,8 @@
                 float: left;
                 width: 20%;
             }
+            .footer {
+            }
         </style>
         {% render_block "css" %}
 
@@ -41,7 +45,7 @@
         {% cms_toolbar %}
         <div class="container-fluid">
           <div class="jumbotron">
-          <h1>Welcome to my photoblog</h1>
+          <h1>Welcome to MimiLand</h1>
           </div>
           <div class="row page-header">
               <div class="col-sm-2">{% static_placeholder 'logo' %}</div>
@@ -58,11 +62,13 @@
                 {% endif %}
               </div>
           </div>
-          <div class="content">
-            {% block content %}{% endblock content %}
-          </div>
-          <div class="footer" style="clear:left;">
+          {% block content %}{% endblock content %}
+          <div class="footer">
+          <div class="panel panel-default">
+            <div class="row panel-footer">
 	        {% static_placeholder 'footer' %}
+            </div>
+          </div>
           </div>
         </div>
         {% render_block "js" %}

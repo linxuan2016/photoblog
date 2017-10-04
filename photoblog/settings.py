@@ -118,7 +118,8 @@ MIDDLEWARE_CLASSES = (
     'cms.middleware.user.CurrentUserMiddleware',
     'cms.middleware.page.CurrentPageMiddleware',
     'cms.middleware.toolbar.ToolbarMiddleware',
-    'cms.middleware.language.LanguageCookieMiddleware'
+    'cms.middleware.language.LanguageCookieMiddleware',
+    'djangocms_ckeditor_filer.middleware.ThumbnailMiddleware',
 )
 
 INSTALLED_APPS = (
@@ -131,24 +132,33 @@ INSTALLED_APPS = (
     'django.contrib.sitemaps',
     'django.contrib.staticfiles',
     'django.contrib.messages',
+    'django_comments',
     'cms',
     'menus',
     'sekizai',
     'treebeard',
+    'djangocms_ckeditor_filer',
     'djangocms_text_ckeditor',
     'filer',
+    'ckeditor_filebrowser_filer',
     'mptt',
     'easy_thumbnails',
-    'djangocms_column',
-    'djangocms_link',
+    'polymorphic',
     'cmsplugin_filer_file',
     'cmsplugin_filer_folder',
     'cmsplugin_filer_image',
     'cmsplugin_filer_utils',
+    'cmsplugin_filer_video',
     'djangocms_style',
     'djangocms_snippet',
+    'djangocms_column',
+    'djangocms_link',
+    'djangocms_file',
+    'djangocms_picture',
     'djangocms_googlemap',
     'djangocms_video',
+    'djangocms_flash',
+    'reset_migrations',
     'photoblog',
     'photoblog_plugins',
     'blog',
@@ -182,11 +192,13 @@ CMS_TEMPLATES = (
     ## Customize this
     ('fullwidth.html', 'Fullwidth'),
     ('sidebar_left.html', 'Sidebar Left'),
-    ('sidebar_right.html', 'Sidebar Right'),
-    ('home.html', 'Home'),
+    ('sidebar_right.html', 'Sidebar Right')
+    #('home.html', 'Home'),
 )
 
 CMS_PERMISSION = True
+CMS_ENABLE_UPDATE_CHECK = False
+CMS_UPDATE_CHECK_TYPE = ('patch')
 
 CMS_PLACEHOLDER_CONF = {
     'my_picture': {
@@ -202,8 +214,71 @@ CMS_PLACEHOLDER_CONF = {
 	'limits': {
 	    'global': 6
 	}
-    }
+    },
+    'footer': {
+        'name': "Footer",
+	'plugins': ['Footer_Plugin'],
+    },
+
+#    'content': {
+#        'name' : 'Content',
+#        'plugins': ['TextPlugin', 'LinkPlugin'],
+#        'default_plugins':[
+#            {
+#                'plugin_type':'TextPlugin',
+#                'values':{
+#                    'body':'<p>Great websites : %(_tag_child_1)s and %(_tag_child_2)s</p>'
+#                },
+#                'children':[
+#                    {
+#                        'plugin_type':'LinkPlugin',
+#                        'values':{
+#                            'name':'django',
+#                            'url':'https://www.djangoproject.com/'
+#                        },
+#                    },
+#                    {
+#                        'plugin_type':'LinkPlugin',
+#                        'values':{
+#                            'name':'django-cms',
+#                            'url':'https://www.django-cms.org'
+#                        },
+#                    },
+#                ]
+#            },
+#        ]
+#    }
 }
+
+
+#TINYMCE_DEFAULT_CONFIG = {
+#    'plugins': "table,spellchecker,paste,searchreplace",
+#    'theme': "advanced",
+#    'cleanup_on_startup': True,
+#    'custom_undo_redo_levels': 10,
+#}
+#TINYMCE_SPELLCHECKER = True
+#TINYMCE_JS_ROOT = os.path.join(STATIC_URL, "tiny_mce")
+#TINYMCE_JS_URL = STATIC_URL + 'tiny_mce/tiny_mce.js' 
+CKEDITOR_UPLOAD_PATH = "uploads/"
+CKEDITOR_SETTINGS = {
+  'toolbar_HTMLField': [
+    ['Undo', 'Redo'],
+    ['ShowBlocks'],
+    ['Format', 'Styles'],
+    ['TextColor', 'BGColor', '-', 'PasteText', 'PasteFromWord'],
+    ['Maximize', ''],
+    '/',
+    ['Bold', 'Italic', 'Underline', '-', 'Subscript', 'Superscript', '-', 'RemoveFormat'],
+    ['JustifyLeft', 'JustifyCenter', 'JustifyRight'],
+    ['Link', 'Unlink'],
+    ['NumberedList', 'BulletedList', '-', 'Outdent', 'Indent', '-', 'Table', 'Filer Image'],
+    ['Source']
+  ],
+     'extraPlugins': 'filerimage',
+     'removePlugins': 'image',
+}
+#TEXT_SAVE_IMAGE_FUNCTION='cmsplugin_filer_image.integrations.ckeditor.create_image_plugin'
 
 DATABASES = {
     'default': {
@@ -217,16 +292,37 @@ DATABASES = {
     }
 }
 
+
 MIGRATION_MODULES = {
-    
+#    'djangocms_column': 'djangocms_column.migrations_django',
+#    'djangocms_flash': 'djangocms_flash.migrations_django',
+#    'djangocms_googlemap': 'djangocms_googlemap.migrations_django',
+#    'djangocms_inherit': 'djangocms_inherit.migrations_django',
+#    'djangocms_link': 'djangocms_link.migrations_django',
+#    'djangocms_style': 'djangocms_style.migrations_django',
+#    'djangocms_file': 'djangocms_file.migrations_django',
+#    'djangocms_picture': 'djangocms_picture.migrations_django',
+#    'djangocms_teaser': 'djangocms_teaser.migrations_django',
+#    'djangocms_video': 'djangocms_video.migrations_django',
 }
 
+
+THUMBNAIL_HIGH_RESOLUTION = True
 THUMBNAIL_PROCESSORS = (
     'easy_thumbnails.processors.colorspace',
     'easy_thumbnails.processors.autocrop',
     'filer.thumbnail_processors.scale_and_crop_with_subject_location',
     'easy_thumbnails.processors.filters'
 )
+
+STATICFILES_FINDERS = [
+    'django.contrib.staticfiles.finders.FileSystemFinder',
+    # important! place right before django.contrib.staticfiles.finders.AppDirectoriesFinder
+    #'aldryn_boilerplates.staticfile_finders.AppDirectoriesFinder',
+    'django.contrib.staticfiles.finders.AppDirectoriesFinder',
+]
+
+FILER_DEBUG = True
 
 LOGIN_REDIRECT_URL = '/'
 LOGOUT_REDIRECT_URL = '/'
