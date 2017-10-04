@@ -94,7 +94,8 @@ TEMPLATES = [
                 'django.template.context_processors.tz',
                 'sekizai.context_processors.sekizai',
                 'django.template.context_processors.static',
-                'cms.context_processors.cms_settings'
+                'cms.context_processors.cms_settings',
+                'blog.context_processors.blog_home',
             ],
             'loaders': [
                 'django.template.loaders.filesystem.Loader',
@@ -190,10 +191,10 @@ CMS_LANGUAGES = {
 
 CMS_TEMPLATES = (
     ## Customize this
+    ('home.html', 'Home'),
     ('fullwidth.html', 'Fullwidth'),
     ('sidebar_left.html', 'Sidebar Left'),
-    ('sidebar_right.html', 'Sidebar Right')
-    #('home.html', 'Home'),
+    ('sidebar_right.html', 'Sidebar Right'),
 )
 
 CMS_PERMISSION = True
