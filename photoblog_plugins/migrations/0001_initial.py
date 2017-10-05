@@ -12,9 +12,31 @@ class Migration(migrations.Migration):
 
     operations = [
         migrations.CreateModel(
+            name='Carousel',
+            fields=[
+                ('cmsplugin_ptr', models.OneToOneField(related_name='photoblog_plugins_carousel', to='cms.CMSPlugin', serialize=False, auto_created=True, parent_link=True, primary_key=True)),
+                ('image_1', models.ImageField(upload_to='carousel')),
+                ('name_1', models.CharField(max_length=200)),
+                ('title_1', models.CharField(max_length=200)),
+                ('text_1', models.TextField()),
+                ('image_2', models.ImageField(upload_to='carousel')),
+                ('name_2', models.CharField(max_length=200)),
+                ('title_2', models.CharField(max_length=200)),
+                ('text_2', models.TextField()),
+                ('image_3', models.ImageField(upload_to='carousel')),
+                ('name_3', models.CharField(max_length=200)),
+                ('title_3', models.CharField(max_length=200)),
+                ('text_3', models.TextField()),
+            ],
+            options={
+                'verbose_name': 'Carousel',
+            },
+            bases=('cms.cmsplugin',),
+        ),
+        migrations.CreateModel(
             name='Footer_New',
             fields=[
-                ('cmsplugin_ptr', models.OneToOneField(auto_created=True, related_name='photoblog_plugins_footer_new', to='cms.CMSPlugin', primary_key=True, parent_link=True, serialize=False)),
+                ('cmsplugin_ptr', models.OneToOneField(related_name='photoblog_plugins_footer_new', to='cms.CMSPlugin', serialize=False, auto_created=True, parent_link=True, primary_key=True)),
                 ('logo', models.ImageField(upload_to='footer_logo')),
                 ('link_url_1', models.CharField(max_length=200)),
                 ('text_1', models.CharField(max_length=200)),
@@ -48,9 +70,22 @@ class Migration(migrations.Migration):
             bases=('cms.cmsplugin',),
         ),
         migrations.CreateModel(
+            name='Galary',
+            fields=[
+                ('cmsplugin_ptr', models.OneToOneField(related_name='photoblog_plugins_galary', to='cms.CMSPlugin', serialize=False, auto_created=True, parent_link=True, primary_key=True)),
+                ('name', models.CharField(max_length=200)),
+                ('image', models.ImageField(upload_to='galary')),
+                ('text', models.TextField()),
+            ],
+            options={
+                'verbose_name': 'Galary',
+            },
+            bases=('cms.cmsplugin',),
+        ),
+        migrations.CreateModel(
             name='Image_Link_New',
             fields=[
-                ('cmsplugin_ptr', models.OneToOneField(auto_created=True, related_name='photoblog_plugins_image_link_new', to='cms.CMSPlugin', primary_key=True, parent_link=True, serialize=False)),
+                ('cmsplugin_ptr', models.OneToOneField(related_name='photoblog_plugins_image_link_new', to='cms.CMSPlugin', serialize=False, auto_created=True, parent_link=True, primary_key=True)),
                 ('name', models.CharField(max_length=200)),
                 ('image', models.ImageField(upload_to='image_link')),
                 ('text', models.CharField(max_length=200)),
@@ -64,15 +99,15 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name='My_Pictures',
             fields=[
-                ('cmsplugin_ptr', models.OneToOneField(auto_created=True, related_name='photoblog_plugins_my_pictures', to='cms.CMSPlugin', primary_key=True, parent_link=True, serialize=False)),
+                ('cmsplugin_ptr', models.OneToOneField(related_name='photoblog_plugins_my_pictures', to='cms.CMSPlugin', serialize=False, auto_created=True, parent_link=True, primary_key=True)),
                 ('name', models.CharField(max_length=200)),
                 ('image', models.ImageField(upload_to='my_pictures')),
                 ('description', models.TextField()),
                 ('price', models.CharField(max_length=10)),
             ],
             options={
-                'verbose_name_plural': 'My Pictures',
                 'verbose_name': 'My Picture',
+                'verbose_name_plural': 'My Pictures',
             },
             bases=('cms.cmsplugin',),
         ),
