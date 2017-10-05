@@ -73,8 +73,47 @@ class Footer_Plugin(CMSPluginBase):
         })
         return context
 
+class Galary_Plugin(CMSPluginBase):
+    text_enabled = True
+    model = Galary
+    name = "Galary"
+    render_template = "galary_plugin.html"
+    
+    def render(self, context, instance, placeholder):
+        context.update({
+            'name': instance.name,
+            'image': instance.image,
+            'text': instance.text,
+        })
+        return context
+
+class Carousel_Plugin(CMSPluginBase):
+    text_enabled = True
+    model = Carousel
+    name = "Carousel"
+    render_template = "carousel.html"
+    
+    def render(self, context, instance, placeholder):
+        context.update({
+            'name_1': instance.name_1,
+            'name_2': instance.name_2,
+            'name_3': instance.name_3,
+            'image_1': instance.image_1,
+            'image_2': instance.image_2,
+            'image_3': instance.image_3,
+            'text_1': instance.text_1,
+            'text_2': instance.text_2,
+            'text_3': instance.text_3,
+            'title_1': instance.title_1,
+            'title_2': instance.title_2,
+            'title_3': instance.title_3,
+        })
+        return context
+
 
 
 plugin_pool.register_plugin(My_Pictures_Plugin)
 plugin_pool.register_plugin(Image_Link_Plugin)
 plugin_pool.register_plugin(Footer_Plugin)
+plugin_pool.register_plugin(Galary_Plugin)
+plugin_pool.register_plugin(Carousel_Plugin)

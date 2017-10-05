@@ -35,7 +35,12 @@
                 float: left;
                 width: 20%;
             }
-            .footer {
+            .carousel .item {
+              height: 700px;
+            }
+            .carousel .item img{
+                height: 100% !important;
+                width:  100% !important;
             }
         </style>
         {% render_block "css" %}
@@ -63,7 +68,7 @@
               </div>
           </div>
           {% block content %}{% endblock content %}
-          <div class="footer">
+          <div class="footer" style="margin-top:2cm;">
           <div class="panel panel-default">
             <div class="row panel-footer">
 	        {% static_placeholder 'footer' %}

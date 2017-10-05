@@ -65,4 +65,35 @@ class Footer_New(CMSPlugin):
     def __unicode__(self):
         return "%s" % (self.name,)     
 
+class Galary(CMSPlugin):
+    name = models.CharField(max_length=200)
+    image = models.ImageField(upload_to="galary")
+    text = models.TextField()
+
+    class Meta:
+        verbose_name = "Galary"
+
+    def __unicode__(self):
+        return "%s" % (self.name,)     
+
+class Carousel(CMSPlugin):
+    image_1 = models.ImageField(upload_to="carousel")
+    name_1 = models.CharField(max_length=200)
+    title_1 = models.CharField(max_length=200)
+    text_1 = models.TextField()
+    image_2 = models.ImageField(upload_to="carousel")
+    name_2 = models.CharField(max_length=200)
+    title_2 = models.CharField(max_length=200)
+    text_2 = models.TextField()
+    image_3 = models.ImageField(upload_to="carousel")
+    name_3 = models.CharField(max_length=200)
+    title_3 = models.CharField(max_length=200)
+    text_3 = models.TextField()
+
+    class Meta:
+        verbose_name = "Carousel"
+
+    def __unicode__(self):
+        return "%s" % (self.name,)     
+
 

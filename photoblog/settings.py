@@ -192,6 +192,7 @@ CMS_LANGUAGES = {
 CMS_TEMPLATES = (
     ## Customize this
     ('home.html', 'Home'),
+    ('galary.html', 'Galary'),
     ('fullwidth.html', 'Fullwidth'),
     ('sidebar_left.html', 'Sidebar Left'),
     ('sidebar_right.html', 'Sidebar Right'),
@@ -220,6 +221,16 @@ CMS_PLACEHOLDER_CONF = {
         'name': "Footer",
 	'plugins': ['Footer_Plugin'],
     },
+    'galary_upload': {
+        'name': "Galary Upload",
+	'plugins': ['Galary_Plugin'],
+    },
+    'club_info': {
+        'name': "Club Info",
+	'plugins': ['Carousel_Plugin'],
+    },
+
+
 
 #    'content': {
 #        'name' : 'Content',
