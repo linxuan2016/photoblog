@@ -4,24 +4,26 @@
 {% block title %}Home{% endblock title %}
 
 {% block content %}
-    <div class="video">
-       {% placeholder "video" %}
-       <!-- <iframe width="410" height="315" src="https://www.youtube.com/embed/Ng8PwcKH8ho" frameborder="0" allowfullscreen></iframe>  -->
-    </div>
+    <div class="home-content">
     <div class="club_info" style="margin-top:2cm;">
+        <h3>MiMiLand Presentation</h3>
         {% placeholder "club_info" %}
     </div>
+    <div class="video">
+        {% placeholder "video" %}
+    </div>
     <div class="row last_activities" style="margin-top:2cm;">
-      <h3> Recent activities </h3>
+      <h3> Recent activities</h3>
         {% placeholder "last_activities"%}
     </div>
     <div class="row last-articles" style="margin-top:2cm;">
-        <h3> Recent articles </h3>
+        <h3> Recent articles</h3>
         <div class="col-sm-4">
         {% for post in posts %}
           <a href="/blog/post/{{post.id}}">{{post.title}}</a>
         {% endfor %}
         </div>
+    </div>
     </div>
 {% endblock content %}
 
