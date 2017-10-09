@@ -6,7 +6,6 @@ class Post(models.Model):
     title = models.CharField(max_length=200)
     date = models.DateField()
     category = models.ForeignKey("Category")
-    #palceholder_name = PlaceholderField('placeholder_name')
     content = HTMLField()
 
     class Meta:
@@ -16,4 +15,6 @@ class Post(models.Model):
 class Category(models.Model):
     title = models.CharField(max_length=200)
     
+    def __str__(self):
+        return self.title
 
