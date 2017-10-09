@@ -15,7 +15,7 @@ def category(request, c_id):
     category = Category.objects.get(pk=c_id)
     categories = Category.objects.all()
     context["category"] = category
-    context["categories"] = categories
+    context["catiegories"] = categories
     
     posts = Post.objects.filter(category=category)
     context["posts"] = posts
@@ -25,9 +25,7 @@ def category(request, c_id):
 def blog(request):
     context = {}
     posts = Post.objects.all().order_by('-date')[:10]
-
     context["posts"] = posts
-
     return render(request, "blog.html", context)
 
 

@@ -27,6 +27,8 @@ h3 {
     margin-right:70px;
 }
 
-.club-info h3 {
-   
+.blog-nav{
+    background-color: #eee;
+    border: 1px dotted black;
+    overflow: scroll;
 }

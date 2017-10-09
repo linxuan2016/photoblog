@@ -2,11 +2,14 @@
 {% load comments %}
 
 {% block content %}
-<div>
+<div class="post-container" style="margin-left:300px;margin-right:300px;">
+<div class="post-content">
     <h2>{{post.title}}</h2>
     <p>{{post.date}}</p>
     <p>{{post.content}}</p>
-
+</div>
+<div class="post-comment" style="margin-top:2cm;">
+    <hr/>
     {% get_comment_form for post as form %}
     {% if user.is_authenticated %}
         <form action="{% comment_form_target %}" method="POST">
@@ -36,8 +39,7 @@
     {% render_comment_list for post %}
     {% get_comment_count for post as comment_count %}
     <p>This article has {{ comment_count }} comments.</p>
-    
-
+</div>
 </div>
 {% endblock %}
 
