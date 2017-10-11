@@ -1,7 +1,9 @@
 <!DOCTYPE html>
+{% load staticfiles %}
 <html>
 <head>
     <title>Login</title>
+    <link rel="stylesheet", type="text/css" href="{% static 'css/main.css' %}">
 </head>
 <body>
    <div class="login-page">
@@ -10,10 +12,10 @@
         {% csrf_token %}
       <input type="text" name="username" placeholder="username"/>
       <input type="password" name="password" placeholder="password"/>
-      <button type="submit">login</button>
-      <p class="message">Not registered? <a href="/register/">Create an account</a></p>
+      <button type="submit">Login</button>
     </form>
   </div>
+      <p class="message" style="margin-top:90px;float:right;">Not registered? <a href="{% url 'register_detail' %}">Create an account</a></p>
 </div>
 </body>
 </html>
