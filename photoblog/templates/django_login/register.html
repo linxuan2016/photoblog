@@ -1,19 +1,20 @@
-
+{% load staticfiles %}
 <!DOCTYPE html>
 <html>
 <head>
     <title>Login</title>
+    <link rel="stylesheet", type="text/css" href="{% static 'css/main.css' %}">
 </head>
 <body>
-   <div class="login-page">
-  <div class="form">
-    <form method="POST" class="register-form">
-        {% csrf_token %} {{ form.as_p }}
+    <div class="login-page">
+        <div class="form">
+            <form method="POST" class="register-form">
+            {% csrf_token %} {{ form.as_p }}
 
-      <button>create</button>
-      <p class="message">Already registered? <a href="/login/">Sign In</a></p>
-    </form>
-  </div>
-</div>
+            <button>create</button>
+            </form>
+        </div>
+        <p class="message" style="float:right;">Already registered? <a href="{% url 'login' %}">Sign In</a></p>
+    </div>
 </body>
 </html>
