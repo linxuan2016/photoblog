@@ -4,8 +4,19 @@
 {% block title %}Galary{% endblock title %}
 
 {% block content %}
-    <div class="row galary-upload" style="margin-top:3cm;">
-        {% placeholder "galary_upload" %}
+<div class="row galary-container" style="margin-top:3cm;">
+    <div class="column galary_column_1">
+        {% placeholder "galary_column_1" %}
     </div>
+    <div class="column galary_column_2">
+        {% placeholder "galary_column_2" %}
+    </div>
+    <div class="column galary_column_3">
+        {% placeholder "galary_column_3" %}
+    </div>
+    <div class="column galary_column_4">
+        {% placeholder "galary_column_4" %}
+    </div>
+</div>
 {% endblock content %}
 

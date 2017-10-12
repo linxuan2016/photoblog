@@ -105,3 +105,27 @@ button[type=submit] {
 button[type=submit]:hover {
     background-color: #45a049;
 }
+
+.galary-container .column {
+    float: left;
+    width: 25%;
+    padding: 10px;
+}
+.galary-plugin img {
+    margin-top: 20px;
+    width: 100%;
+}
+
+/* Responsive layout - makes a two column-layout instead of four columns */
+@media (max-width: 800px) {
+    .galary-container .column {
+        width: 50%;
+    }
+}
+
+/* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
+@media (max-width: 600px) {
+    .galary-container .column {
+        width: 100%;
+   }
+}
