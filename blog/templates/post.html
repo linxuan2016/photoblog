@@ -2,6 +2,9 @@
 {% load comments %}
 
 {% block content %}
+<div class="photo-slideshow">
+    <img src="{{ post.post_image.url }}" alt="{{post.image_name}}">
+</div>
 <div class="post-container">
 <div class="post-content" style="background-color: #f8f8f8;">
     <h2>{{post.title}}</h2>
@@ -9,6 +12,11 @@
     <p>{{post.content}}</p>
 </div>
 <div class="post-comment" style="margin-top:2cm;">
+    {% get_comment_count for post as comment_count %}
+    <p>This article has {{ comment_count }} comments.</p>
+    {% get_comment_list for post as comment_list %}
+    {% include 'comments/list.html'%}
+
     {% get_comment_form for post as form %}
     {% if user.is_authenticated %}
         <form action="{% comment_form_target %}" method="POST">
@@ -35,11 +43,6 @@
           </form>
         </table>
     {% endif %}
-    {% get_comment_list for post as comment_list %}
-    {% include 'comments/list.html'%}
-
-    {% get_comment_count for post as comment_count %}
-    <p>This article has {{ comment_count }} comments.</p>
 </div>
 </div>
 {% endblock %}
