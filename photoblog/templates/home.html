@@ -21,13 +21,13 @@
             </div>
         </div>
     </div>
-    <div class="row last-articles" style="margin-top:2cm;">
+    <div class="row last-articles" style="margin-top:2cm; height:270;">
         <h3> Recent articles</h3>
-        <div class="post-image" style="height:200px;">
         {% for post in posts %}
-              <a href="/media/{{post.post_image}}"><img src="{{post.post_image.url}}" alt="{{post.image_name}}" style="display:inline-block;height:100%;float:left;"></a>
-        {% endfor %}
+        <div class="post-image col-sm-3">
+              <a href="/media/{{post.post_image}}"><img src="{{post.post_image.url}}" alt="{{post.image_name}}"></a>
         </div>
+        {% endfor %}
     </div>
     </div>
 {% endblock content %}

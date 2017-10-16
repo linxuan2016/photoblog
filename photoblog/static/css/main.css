@@ -52,10 +52,6 @@ h3 {
     width:500px;
 }
 
-.last_activities h3 {
-    margin-top:0px;
-}
-
 .navigation-bar {
     height:85px;
     position:fixed;
@@ -66,11 +62,16 @@ h3 {
 } 
 
 .post-container {
-    margin-top: 3cm;
-    margin-left:300px;
-    margin-right:300px;
+    width: 60%;
+    margin: 87px auto;
+    overflow:hidden;
 }
     
+.post-container img {
+    width:100%;
+    height:auto;
+}
+
 
 .login-page {
     margin:auto;
@@ -128,4 +129,12 @@ button[type=submit]:hover {
     .galary-container .column {
         width: 100%;
    }
+}
+
+.post-image {
+}
+
+.post-image img {
+    max-height: 100%;
+    max-width: 100%;
 }
