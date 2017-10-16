@@ -14,16 +14,18 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name='Category',
             fields=[
-                ('id', models.AutoField(auto_created=True, verbose_name='ID', primary_key=True, serialize=False)),
+                ('id', models.AutoField(serialize=False, primary_key=True, auto_created=True, verbose_name='ID')),
                 ('title', models.CharField(max_length=200)),
             ],
         ),
         migrations.CreateModel(
             name='Post',
             fields=[
-                ('id', models.AutoField(auto_created=True, verbose_name='ID', primary_key=True, serialize=False)),
+                ('id', models.AutoField(serialize=False, primary_key=True, auto_created=True, verbose_name='ID')),
                 ('title', models.CharField(max_length=200)),
                 ('date', models.DateField()),
+                ('post_image', models.ImageField(upload_to='post_image')),
+                ('image_name', models.CharField(max_length=200)),
                 ('content', djangocms_text_ckeditor.fields.HTMLField()),
                 ('category', models.ForeignKey(to='blog.Category')),
             ],
