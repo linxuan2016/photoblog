@@ -42,6 +42,20 @@
         </table>
     {% endif %}
 </div>
+<div class="post-page-management">
+    <ul class="pager">
+        {% if previous_post %}
+        <li><a href="/blog/post/{{previous_post.id}}">Previous</a></li>
+        {% else %}
+        This is the most recent post!
+        {% endif %}
+        {% if next_post %}
+        <li><a href="/blog/post/{{next_post.id}}">Next</a></li>
+        {% else %}
+        This is the last post!
+        {% endif %}
+    </ul>
+</div>
 </div>
 {% endblock %}
 
