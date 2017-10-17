@@ -1,11 +1,25 @@
 from django.shortcuts import render
+from django.shortcuts import get_object_or_404
+
 from .models import *
 
 
 def post(request, p_id):
     context = {}
-    post = Post.objects.get(pk=p_id)
+    post = get_object_or_404(Post, pk=p_id)
+    try:
+        previous_post = post.get_next_by_date()
+    except Post.DoesNotExist:
+        previous_post = None
+
+    try:
+        next_post = post.get_previous_by_date()
+    except Post.DoesNotExist:
+        next_post = None
+
     context["post"] = post
+    context["next_post"] = next_post
+    context["previous_post"] = previous_post
 
     return render(request, "post.html", context)
 
