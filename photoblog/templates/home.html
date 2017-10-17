@@ -11,13 +11,18 @@
     <div class="row video">
         {% placeholder "video" %}
     </div>
-    <div class="row last-articles" style="margin-top:2cm; height:270;">
-        <h3> Recent articles</h3>
+    <div class="row last-articles" style="margin-top:2cm;">
+        <div><h3> Recent articles</h3></div>
+        <div class="row image-view" style="height: 270px;">
         {% for post in posts %}
         <div class="post-image col-sm-3">
-              <a href="/media/{{post.post_image}}"><img src="{{post.post_image.url}}" alt="{{post.image_name}}"></a>
+              <a href="/media/{{post.post_image}}">
+                <img src="{{post.post_image.url}}" alt="{{post.image_name}}">
+              <p class="image-description"><strong>{{post.title}}</strong></p>
+              </a>
         </div>
         {% endfor %}
+        </div>
     </div>
     </div>
 {% endblock content %}
