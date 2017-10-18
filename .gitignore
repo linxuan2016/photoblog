@@ -48,3 +48,4 @@ Thumbs.db
 setup.py
 src/aldryn-newsblog
 *.swn
+*.db
