@@ -164,6 +164,7 @@ INSTALLED_APPS = (
     'photoblog_plugins',
     'blog',
     'django_login',
+    'gallery',
 )
 
 LANGUAGES = (

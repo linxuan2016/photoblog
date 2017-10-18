@@ -125,13 +125,19 @@ button[type=submit]:hover {
     background-color: #45a049;
 }
 
+.galary-container {
+    width:80%;
+    margin-left:auto;
+    margin-right:auto;
+}
 .galary-container .column {
     float: left;
     width: 25%;
-    padding: 10px;
+    padding: 2px;
 }
-.galary-plugin img {
-    margin-top: 20px;
+.galary-container img {
+    margin-top: 10px;
+    margin-bottom:20px;
     width: 100%;
 }
 
@@ -179,4 +185,16 @@ button[type=submit]:hover {
 .post-image:hover .image-description {
     visibility: visible;
     opacity: 0.5;
+}
+
+
+.photo-container {
+    height:300px;
+    margin-top:100px;
+    min-width:800px;
+    max-width:80%;
+    margin-left:auto;
+    margin-right:auto;
+    display:block;
+    padding:12px;
 }

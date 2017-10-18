@@ -25,6 +25,7 @@ urlpatterns = [
 urlpatterns += i18n_patterns(
     url(r'^admin/', include(admin.site.urls)),  # NOQA
     url(r'^blog/', include('blog.urls')),
+    url(r'^gallery/', include('gallery.urls')),
     #url(r'^$', RedirectView.as_view(url='/blog/home/')),
     url(r'^', include('cms.urls')),
     url(r'^', include('django_login.urls')),

@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% load cms_tags %}
+
+{% block title %}Photo Portrait{% endblock title %}
+
+{% block content %}
+<div class="row" style="margin-top:85px;background-color:#f3f5f6;">
+    <div class="galary-container">
+    <div class="column galary_column_1">
+    {% for photo in photos_col_1 %}
+        <a href=""><img src="{{ photo.photo_portrait.url }}" alt="{{photo.name}}"></a>
+    {% endfor%}
+    </div>
+    <div class="column galary_column_2">
+    {% for photo in photos_col_2 %}
+        <a href=""><img src="{{ photo.photo_portrait.url }}" alt="{{photo.name}}"></a>
+    {% endfor%}
+    </div>
+    <div class="column galary_column_3">
+    {% for photo in photos_col_3 %}
+        <a href=""><img src="{{ photo.photo_portrait.url }}" alt="{{photo.name}}"></a>
+    {% endfor%}
+    </div>
+    <div class="column galary_column_4">
+    {% for photo in photos_col_4 %}
+        <a href=""><img src="{{ photo.photo_portrait.url }}" alt="{{photo.name}}"></a>
+    {% endfor%}
+    </div>
+    </div>
+</div>
+{% endblock content %}
+
