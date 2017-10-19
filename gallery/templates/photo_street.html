@@ -8,22 +8,22 @@
     <div class="galary-container">
     <div class="column galary_column_1">
     {% for photo in photos_col_1 %}
-        <a href=""><img src="{{ photo.photo_street.url }}" alt="{{photo.name}}"></a>
+        <a href="{{photo.id}}"><img src="{{ photo.photo_street.url }}" alt="{{photo.name}}"></a>
     {% endfor%}
     </div>
     <div class="column galary_column_2">
     {% for photo in photos_col_2 %}
-        <a href=""><img src="{{ photo.photo_street.url }}" alt="{{photo.name}}"></a>
+        <a href="{{photo.id}}"><img src="{{ photo.photo_street.url }}" alt="{{photo.name}}"></a>
     {% endfor%}
     </div>
     <div class="column galary_column_3">
     {% for photo in photos_col_3 %}
-        <a href=""><img src="{{ photo.photo_street.url }}" alt="{{photo.name}}"></a>
+        <a href="{{photo.id}}"><img src="{{ photo.photo_street.url }}" alt="{{photo.name}}"></a>
     {% endfor%}
     </div>
     <div class="column galary_column_4">
     {% for photo in photos_col_4 %}
-        <a href=""><img src="{{ photo.photo_street.url }}" alt="{{photo.name}}"></a>
+        <a href="{{photo.id}}"><img src="{{ photo.photo_street.url }}" alt="{{photo.name}}"></a>
     {% endfor%}
     </div>
     </div>
