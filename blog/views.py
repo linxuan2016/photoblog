@@ -7,15 +7,8 @@ from .models import *
 def post(request, p_id):
     context = {}
     post = get_object_or_404(Post, pk=p_id)
-    try:
-        previous_post = post.get_next_by_date()
-    except Post.DoesNotExist:
-        previous_post = None
-
-    try:
-        next_post = post.get_previous_by_date()
-    except Post.DoesNotExist:
-        next_post = None
+    next_post = post.next()
+    previous_post = post.previous()
 
     context["post"] = post
     context["next_post"] = next_post

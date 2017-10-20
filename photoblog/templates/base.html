@@ -43,18 +43,18 @@
                   {% show_menu 0 100 100 100 "menu/custom_menu.html" %}
                 </ul>
               </div>
-              <div class="col-sm-2">
+              <div class="col-sm-2" style="color:white;">
                 {% if request.user.is_authenticated%}
                   Hello {{request.user.username}} <a href="{% url "logout" %}">Logout</a>
                 {% else %}
-                  <a href="{% url "login" %}">Login</a>
+                 <a class="link-login"href="{% url "login" %}"><strong>Login</strong></a>
                 {% endif %}
               </div>
           </div>
           {% block content %}{% endblock content %}
-          <div class="footer row" style="margin-top:2cm;clear:both">
-          <div class="panel panel-default">
-            <div class="row panel-footer">
+          <div class="footer" style="margin-top:2cm;clear:both">
+          <div class="panel panel-default" style="margin-bottom:0px;">
+            <div class="row panel-footer" style="background-color:rgb(0,0,0,0.9);">
 	        {% static_placeholder 'footer' %}
             </div>
           </div>
