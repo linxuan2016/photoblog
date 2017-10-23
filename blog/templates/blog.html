@@ -3,17 +3,21 @@
 
 {% block content %}
 <div class="row blog" style="margin-top:3cm;">
-  <div class="col-sm-10 post-list">
+  <div class="blog-container">
+  <div class="col-sm-10">
+    <div class="post-list">
     {% for post in posts %}
       <a href="/blog/post/{{post.id}}">
         <h2>{{post.title}}</h2>
       </a>
       <h3>{{category.title}}</h3>
-      <p>{{post.date}}</p>
-      <p>{{post.content}}</p>
+      <p><strong>{{post.date}}</strong></p>
+      <p>{{post.content | truncatewords:50}}...</p>
     {% endfor%}
+    </div>
   </div>
-  <div class="col-sm-2 blog-nav">
+  <div class="col-sm-2">
+    <div class="blog-nav">
     {% regroup posts by category as category_list %}
     <ul class="category-list" style="list-style-type:none; padding-left:0px">
       <li>
@@ -26,7 +30,9 @@
           </ul>
         {% endfor %}
       </li>
-    </ul>    
+    </ul> 
+    </div>   
+  </div>
   </div>
 </div>
 {% endblock %}

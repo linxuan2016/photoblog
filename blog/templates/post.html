@@ -30,7 +30,7 @@
 </div>
 <div class="post-comment" style="margin-top:2cm;">
     {% get_comment_count for post as comment_count %}
-    <p>This article has {{ comment_count }} comments.</p>
+    <p style="color:black;"><strong>This article has {{ comment_count }} comments.</strong></p>
     {% get_comment_list for post as comment_list %}
     {% include 'comments/list.html'%}
 
@@ -66,12 +66,12 @@
         {% if previous_post %}
         <li><a href="/blog/post/{{previous_post.id}}"><strong>Previous</strong></a></li>
         {% else %}
-        <p><strong>This is the most recent post!</strong></p>
+        <p style="color:black"><strong>This is the most recent post!</strong></p>
         {% endif %}
         {% if next_post %}
         <li><a href="/blog/post/{{next_post.id}}"><strong>Next</strong></a></li>
         {% else %}
-        <p><strong>This is the last post!</strong></p>
+        <p style="color:black"><strong>This is the last post!</strong></p>
         {% endif %}
     </ul>
 </div>
