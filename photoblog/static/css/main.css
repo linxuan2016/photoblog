@@ -2,6 +2,7 @@ body {
     background-image:url("images/background_image.jpeg");
     background-attachment:fixed;
     background-size: cover;
+    overflow-x: hidden;
 }
 .dropdown .dropdown-menu {
     background-color:rgb(0,0,0,0.5);
@@ -48,7 +49,7 @@ body {
 
 .slideshow-content {
     overflow:hidden;
-    height: 500px;
+    height: 700px;
     margin-top:85px;
     background-color: rgb(0,0,0,0.9);
 }
@@ -73,7 +74,7 @@ body {
 }
 
 .last-articles h3 {
-    color:white;
+    margin-bottom:40px;
 }
 
 h3 {
@@ -86,28 +87,52 @@ h3 {
 
 .blog-nav{
     background-color: #eee;
-    border: 1px dotted black;
+    opacity:0.6;
     overflow: scroll;
+    padding:15px;
+    border-radius: 10px;
+}
+.post-list {
+    background-color: #eee;
+    opacity:0.6;
+    padding:15px;
+    border-radius: 10px;
 }
 
+.post-content {
+    background-color: #f8f8f8;
+    opacity: 0.8;
+    border-radius:10px;
+    padding:15px;
+}
 #id_comment {
     width: 100%;
     height: 150px;
     padding: 12px 20px;
     box-sizing: border-box;
-    border: 2px solid #ccc;
+    border: 2px solid grey;
     border-radius: 4px;
-    background-color: #f8f8f8;
+    background-color:grey;
+    opacity:0.8;
     font-size: 16px;
     resize: none;
 }
 
+.comment-list {
+    padding:15px;
+    background-color: #f8f8f8;
+    opacity:0.8;
+    border-radius:10px;
+    margin-bottom:15px;
+}
 .comment-paragragh {
     word-wrap: break-word; 
     white-space: pre-line;
     white-space: pre-wrap;
     margin-top: 5px;
     margin-bottom: 10px;
+    background-color: #f8f8f8;
+
 }
 
 .login-page {
@@ -169,6 +194,18 @@ button[type=submit]:hover {
     background-color: #45a049;
 }
 
+.blog-container {
+    width:80%;
+    margin-left:auto;
+    margin-right:auto;
+}
+.post-list h2 {
+    color:rgb(0,0,0, 0.8);
+}
+.post-list h2:hover {
+    text-decoration: none !important;
+    color:black;
+}
 .galary-container {
     width:80%;
     margin-left:auto;
@@ -243,6 +280,12 @@ button[type=submit]:hover {
     display:block;
     padding:12px;
 }
-
+hr {
+    background-color: dimgrey !important;
+    color: dimgrey !important;
+    border: solid 1px dimgrey !important;
+    height: 1px !important;
+    width: 100% !important;
+}
 
 
