@@ -11,6 +11,7 @@ import os
 
 from django.core.wsgi import get_wsgi_application
 
+os.environ["SECRET_KEY"] = "mimilandyqynitt559$k+@^8us-zl#d*+u$8r-(jd+^^jj2qkbtt)4nevlphotoblog"
 os.environ.setdefault("DJANGO_SETTINGS_MODULE", "photoblog.settings")
 
 application = get_wsgi_application()
