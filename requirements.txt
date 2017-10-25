@@ -1,64 +1,79 @@
-apturl==0.5.2
-beautifulsoup4==4.4.1
-blinker==1.3
-Brlapi==0.6.4
-chardet==2.3.0
-checkbox-support==0.22
-command-not-found==0.3
-cryptography==1.2.3
-defer==1.0.6
-dj-database-url==0.4.2
-django-tinymce==2.6.0
-djangocms-installer==0.9.7
-feedparser==5.1.3
-guacamole==0.9.2
-html5lib==0.999
-httplib2==0.9.1
-idna==2.0
-Jinja2==2.8
-language-selector==0.1
-louis==2.6.4
-lxml==3.5.0
-Mako==1.0.3
-MarkupSafe==0.23
-oauthlib==1.0.3
-onboard==1.2.0
-padme==1.1.1
-pexpect==4.0.1
-Pillow==3.1.2
-plainbox==0.25
-ptyprocess==0.5
-pyasn1==0.1.9
-pycups==1.9.73
-pycurl==7.43.0
-pygobject==3.20.0
-PyJWT==1.3.0
-pyparsing==2.0.3
-python-apt==1.1.0b1
-python-debian==0.1.27
-python-systemd==231
+coverage==4.4.1
+python-coveralls==2.5.0
+unittest-xml-reporting==1.11.0
+Pillow>=3.3
+django-treebeard>=4.1
+argparse
+dj-database-url
+djangocms-admin-style>=1.0
+django-sekizai>=0.9
+django-classy-tags>=0.7.2
+https://github.com/divio/djangocms-text-ckeditor/archive/master.zip
+https://github.com/ojii/django-better-test/archive/8aa2407d097fe3789b74682f0e6bd7d15d449416.zip#egg=django-better-test
+https://github.com/ojii/django-app-manage/archive/65da18ef234a4e985710c2c0ec760023695b40fe.zip#egg=django-app-manage
+iptools
+sphinx==1.4.5
+sphinxcontrib-spelling
+pyflakes==1.1.0
+pyenchant
+# required to run the server for integration tests
+djangocms-helper == 0.9.9
+Django>=1.9
+django-hvad==1.5
+django-formtools
+argparse == 1.4.0
+certifi == 2017.7.27.1
+chardet == 3.0.4
+cmsplugin_filer == 1.1.3
+django_admin_sortable == 1.6.7
+django_appconf == 1.0.2
+django_ckeditor == 5.3.0
+django_ckeditor_filer == 1.1.0
+django_cms == 3.4.4
+djangocms_attributes_field==0.3.0
+djangocms_ckeditor_filer==0.2.2
+djangocms_column == 1.7.0
+djangocms_file == 2.0.2
+djangocms_googlemap == 1.1.1
+djangocms_installer == 0.9.7
+djangocms_link==2.1.2
+djangocms_picture==2.0.5
+ngocms_snippet==1.9.2
+djangocms_style==2.0.2
+djangocms_text_ckeditor==3.5.0
+djangocms_video==2.0.3
+django_contrib_comments==1.8.0
+django_filer==1.2.8
+django_formtools==2.0
+django_js_asset==0.1.1
+django_mptt==0.8.7
+django_polymorphic==1.0.2
+django_reset_migrations==0.3.1
+django_sekizai==0.7
+django_treebeard==4.1.2
+dj_database_url==0.4.2
+docopt==0.6.2
+easy_thumbnails==2.3
+html5lib>=0.8
+idna == 2.6
+isodate==0.5.4
+jsonfield==2.0.2
+olefile==0.44
+pip==9.0.1
+pluggy==0.5.2
+py==1.4.34
+pyflakes==1.6.0
 pytz==2017.2
-pyxdg==0.25
-reportlab==3.3.0
-requests==2.9.1
-screen-resolution-extra==0.0.0
-sessioninstaller==0.0.0
+requests==2.18.4
+setuptools==36.3.0
 six==1.10.0
-system-service==0.3
+South==1.0.2
+tox==2.8.2
 tzlocal==1.4
-ubuntu-drivers-common==0.0.0
-ufw==0.35
-unattended-upgrades==0.1
-unity-scope-calculator==0.1
-unity-scope-chromiumbookmarks==0.1
-unity-scope-colourlovers==0.1
-unity-scope-devhelp==0.1
-unity-scope-firefoxbookmarks==0.1
-unity-scope-gdrive==0.7
-unity-scope-manpages==0.1
-unity-scope-openclipart==0.1
-unity-scope-texdoc==0.1
-unity-scope-tomboy==0.1
+Unidecode==0.04.21
+urllib3==1.22
+urllib3==1.22
+wheel==0.29.0
 unity-scope-virtualbox==0.1
 unity-scope-yelp==0.1
 unity-scope-zotero==0.1
