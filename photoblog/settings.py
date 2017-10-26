@@ -299,7 +299,7 @@ DATABASES = {
         
 }
 DATABASES['default'] = dj_database_url.config(
-    default = 'postgres://tdnuxojnsoamix:9a9b0a2a8ca8f7e0e9e98b26a091ae9ab62de4751e7736a60e85f1134f568d36@ec2-54-243-58-69.compute-1.amazonaws.com:5432/d1a66ls0nq32gn'
+    default = 'postgres://citosxezsxtplp:f220264a1c18c2fb3a93e206e03d3092d27fd56b9ea754cf475190b80eaba526@ec2-54-243-47-252.compute-1.amazonaws.com:5432/dd9tjd70elvp66'
 )
 
 MIGRATION_MODULES = {
