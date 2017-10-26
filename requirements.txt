@@ -44,7 +44,6 @@ django_mptt==0.8.7
 django_polymorphic==1.0.2
 django_reset_migrations==0.3.1
 django_sekizai>=0.7
-django_treebeard==4.1.2
 dj_database_url==0.4.2
 docopt==0.6.2
 easy_thumbnails==2.3
@@ -65,7 +64,6 @@ South==1.0.2
 tox==2.8.2
 tzlocal==1.4
 Unidecode==0.04.21
-urllib3==1.22
 urllib3==1.22
 wheel==0.29.0
 virtualenv==15.1.0
