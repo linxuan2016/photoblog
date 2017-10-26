@@ -5,7 +5,6 @@ Pillow>=3.3
 django-treebeard>=4.1
 dj-database-url
 djangocms-admin-style>=1.0
-django-sekizai>=0.9
 django-classy-tags>=0.7.2
 iptools
 sphinx==1.4.5
@@ -44,7 +43,7 @@ django_js_asset==0.1.1
 django_mptt==0.8.7
 django_polymorphic==1.0.2
 django_reset_migrations==0.3.1
-django_sekizai==0.7
+django_sekizai>=0.7
 django_treebeard==4.1.2
 dj_database_url==0.4.2
 docopt==0.6.2
