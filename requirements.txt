@@ -43,6 +43,7 @@ django_mptt==0.8.7
 django_polymorphic==1.0.2
 django_reset_migrations==0.3.1
 django_sekizai>=0.7
+django_comments
 dj_database_url==0.4.2
 docopt==0.6.2
 easy_thumbnails==2.3
