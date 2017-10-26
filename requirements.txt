@@ -8,7 +8,7 @@ django-classy-tags>=0.7.2
 iptools
 sphinx==1.4.5
 sphinxcontrib-spelling
-pyflakes==1.1.0
+pyflakes>=1.1.0
 pyenchant
 # required to run the server for integration tests
 djangocms-helper == 0.9.9
@@ -54,7 +54,6 @@ olefile==0.44
 pip==9.0.1
 pluggy==0.5.2
 py==1.4.34
-pyflakes==1.6.0
 pytz==2017.2
 requests==2.18.4
 setuptools==36.3.0
