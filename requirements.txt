@@ -16,7 +16,6 @@ pyenchant
 djangocms-helper == 0.9.9
 Django>=1.9
 django-hvad==1.5
-django-formtools
 argparse == 1.4.0
 certifi == 2017.7.27.1
 chardet == 3.0.4
