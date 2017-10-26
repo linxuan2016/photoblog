@@ -3,4 +3,4 @@ Django==1.11.1
 gunicorn==19.7.1
 psycopg2==2.7.1
 whitenoise==3.3.0
-django_comments>=1.0.0
+psycopg2==2.7.3.2
