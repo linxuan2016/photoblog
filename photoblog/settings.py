@@ -17,8 +17,8 @@ https://docs.djangoproject.com/en/1.8/ref/settings/
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 import os
 
-BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.8/howto/deployment/checklist/
@@ -28,8 +28,9 @@ SECRET_KEY = os.environ['SECRET_KEY']
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ["wandefu-photoblog.herokuapp.com"]
+ALLOWED_HOSTS = ["*"]
 
+ENVIRONMENT = 'production'
 
 # Application definition
 
@@ -70,8 +71,8 @@ USE_TZ = True
 STATIC_URL = '/static/'
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
-STATIC_ROOT = os.path.normpath(os.path.join(BASE_DIR, 'staticfiles'))
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
 
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR, 'static'),
@@ -122,7 +123,6 @@ MIDDLEWARE_CLASSES = (
     'cms.middleware.toolbar.ToolbarMiddleware',
     'cms.middleware.language.LanguageCookieMiddleware',
     'djangocms_ckeditor_filer.middleware.ThumbnailMiddleware',
-    'whitenoise.middleware.WhiteNoiseMiddleware',
 )
 
 INSTALLED_APPS = (
@@ -297,19 +297,11 @@ CKEDITOR_SETTINGS = {
 
 DATABASES = {
         
-    'default': {
-        'CONN_MAX_AGE': 0,
-        'ENGINE': 'django.db.backends.sqlite3',
-        'HOST': 'localhost',
-        'NAME': 'project.db',
-        'PASSWORD': '',
-        'PORT': '',
-        'USER': ''
 }
 }
-db_from_env = dj_database_url.config(conn_max_age=500)
-DATABASES['default'].update(db_from_env)
-
+DATABASES['default'] = dj_database_url.config(
+    default = 'postgres://tdnuxojnsoamix:9a9b0a2a8ca8f7e0e9e98b26a091ae9ab62de4751e7736a60e85f1134f568d36@ec2-54-243-58-69.compute-1.amazonaws.com:5432/d1a66ls0nq32gn'
+)
 
 MIGRATION_MODULES = {
 #    'djangocms_column': 'djangocms_column.migrations_django',

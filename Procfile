@@ -1,1 +1,1 @@
-web: gunicorn photoblog.wsgi --log-file -
+web: gunicorn wandefu-photoblog.wsgi --log-file -
