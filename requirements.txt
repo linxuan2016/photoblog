@@ -3,7 +3,6 @@ python-coveralls==2.5.0
 unittest-xml-reporting==1.11.0
 Pillow>=3.3
 django-treebeard>=4.1
-dj-database-url
 djangocms-admin-style>=1.0
 django-classy-tags>=0.7.2
 iptools
