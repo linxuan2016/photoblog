@@ -31,7 +31,6 @@ djangocms_googlemap == 1.1.1
 djangocms_installer == 0.9.7
 djangocms_link==2.1.2
 djangocms_picture==2.0.5
-ngocms_snippet==1.9.2
 djangocms_style==2.0.2
 djangocms_text_ckeditor==3.5.0
 djangocms_video==2.0.3
