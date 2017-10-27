@@ -297,9 +297,6 @@ CKEDITOR_SETTINGS = {
 }
 #TEXT_SAVE_IMAGE_FUNCTION='cmsplugin_filer_image.integrations.ckeditor.create_image_plugin'
 
-DATABASES = {
-        
-}
 db_from_env = dj_database_url.config(conn_max_age=500)
 DATABASES['default'].update(db_from_env)
 if len(DATABASES['default']) == 0:
