@@ -299,7 +299,6 @@ CKEDITOR_SETTINGS = {
 
 db_from_env = dj_database_url.config(conn_max_age=500)
 DATABASES['default'].update(db_from_env)
-if len(DATABASES['default']) == 0:
 DATABASES = {
     'default': {
         'CONN_MAX_AGE': 0,
@@ -311,6 +310,8 @@ DATABASES = {
         'USER': ''
     }
 }
+db_from_env = dj_database_url.config(conn_max_age=500)
+DATABASES['default'].update(db_from_env)
 
 MIGRATION_MODULES = {
 #    'djangocms_column': 'djangocms_column.migrations_django',
