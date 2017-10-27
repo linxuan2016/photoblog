@@ -72,7 +72,8 @@ STATIC_URL = '/static/'
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
-STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+
 
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR,'photoblog','static'),
@@ -110,6 +111,7 @@ TEMPLATES = [
 
 
 MIDDLEWARE_CLASSES = (
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'cms.middleware.utils.ApphookReloadMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -298,9 +300,8 @@ CKEDITOR_SETTINGS = {
 DATABASES = {
         
 }
-DATABASES['default'] = dj_database_url.config(
-    default = 'postgres://citosxezsxtplp:f220264a1c18c2fb3a93e206e03d3092d27fd56b9ea754cf475190b80eaba526@ec2-54-243-47-252.compute-1.amazonaws.com:5432/dd9tjd70elvp66'
-)
+db_from_env = dj_database_url.config(conn_max_age=500)
+DATABASES['default'].update(db_from_env)
 
 MIGRATION_MODULES = {
 #    'djangocms_column': 'djangocms_column.migrations_django',
