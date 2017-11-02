@@ -16,19 +16,31 @@ https://docs.djangoproject.com/en/1.8/ref/settings/
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 import os
 
-BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))) 
+
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_HOST_USER = "mimiland.lisa.fan@gmail.com"
+EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_PASSWORD')
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+DEFAULT_FROM_EMAIL = 'Linxuan FAN <linxuan.fan@email.com>'
+
+ADMINS = {
+    ('Linxuan', 'linxuan.fan@email.com'),
+}
+MANAGERS = ADMINS
+
 
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.8/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'c$#)8(z_zx^dkgj3gnyn2)q^ep6d%ao%3td1$g9^gg8ywp47pi'
-
+SECRET_KEY = os.environ.get('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['wandefu-photoblog.herokuapp.com']
 
 
 # Application definition
@@ -230,49 +242,8 @@ CMS_PLACEHOLDER_CONF = {
         'name': "Club Info",
 	'plugins': ['Carousel_Plugin'],
     },
-
-
-
-#    'content': {
-#        'name' : 'Content',
-#        'plugins': ['TextPlugin', 'LinkPlugin'],
-#        'default_plugins':[
-#            {
-#                'plugin_type':'TextPlugin',
-#                'values':{
-#                    'body':'<p>Great websites : %(_tag_child_1)s and %(_tag_child_2)s</p>'
-#                },
-#                'children':[
-#                    {
-#                        'plugin_type':'LinkPlugin',
-#                        'values':{
-#                            'name':'django',
-#                            'url':'https://www.djangoproject.com/'
-#                        },
-#                    },
-#                    {
-#                        'plugin_type':'LinkPlugin',
-#                        'values':{
-#                            'name':'django-cms',
-#                            'url':'https://www.django-cms.org'
-#                        },
-#                    },
-#                ]
-#            },
-#        ]
-#    }
 }
 
-
-#TINYMCE_DEFAULT_CONFIG = {
-#    'plugins': "table,spellchecker,paste,searchreplace",
-#    'theme': "advanced",
-#    'cleanup_on_startup': True,
-#    'custom_undo_redo_levels': 10,
-#}
-#TINYMCE_SPELLCHECKER = True
-#TINYMCE_JS_ROOT = os.path.join(STATIC_URL, "tiny_mce")
-#TINYMCE_JS_URL = STATIC_URL + 'tiny_mce/tiny_mce.js' 
 CKEDITOR_UPLOAD_PATH = "uploads/"
 CKEDITOR_SETTINGS = {
   'toolbar_HTMLField': [
@@ -291,32 +262,25 @@ CKEDITOR_SETTINGS = {
      'extraPlugins': 'filerimage',
      'removePlugins': 'image',
 }
-#TEXT_SAVE_IMAGE_FUNCTION='cmsplugin_filer_image.integrations.ckeditor.create_image_plugin'
 
+import dj_database_url
 DATABASES = {
-    'default': {
-        'CONN_MAX_AGE': 0,
-        'ENGINE': 'django.db.backends.sqlite3',
-        'HOST': 'localhost',
-        'NAME': 'project.db',
-        'PASSWORD': '',
-        'PORT': '',
-        'USER': ''
-    }
+    "default": dj_database_url.config()
+#    'default': {
+#        'CONN_MAX_AGE': 0,
+#        'ENGINE': 'django.db.backends.sqlite3',
+#        'HOST': 'localhost',
+#        'NAME': 'project.db',
+#        'PASSWORD': '',
+#        'PORT': '',
+#        'USER': ''
+#    }
 }
-
+#db_from_env = dj_database_url.config()
+#DATABASES['default'].update(db_from_env)
+#DATABASES['default']['CONN_MAX_AGE'] = 500
 
 MIGRATION_MODULES = {
-#    'djangocms_column': 'djangocms_column.migrations_django',
-#    'djangocms_flash': 'djangocms_flash.migrations_django',
-#    'djangocms_googlemap': 'djangocms_googlemap.migrations_django',
-#    'djangocms_inherit': 'djangocms_inherit.migrations_django',
-#    'djangocms_link': 'djangocms_link.migrations_django',
-#    'djangocms_style': 'djangocms_style.migrations_django',
-#    'djangocms_file': 'djangocms_file.migrations_django',
-#    'djangocms_picture': 'djangocms_picture.migrations_django',
-#    'djangocms_teaser': 'djangocms_teaser.migrations_django',
-#    'djangocms_video': 'djangocms_video.migrations_django',
 }
 
 
@@ -340,7 +304,17 @@ FILER_DEBUG = True
 LOGIN_REDIRECT_URL = '/'
 LOGOUT_REDIRECT_URL = '/'
 
-CSRF_COOKIE_SECURE = None
+CSRF_COOKIE_SECURE = True
 
 SESSION_EXPIRE_AT_BROWSER_CLOSE = True
 #SESSION_COOKIE_AGE = 10 * 60
+
+CORS_REPLACE_HTTPS_REFERER     = True
+HOST_SCHEME                    = "http://"
+SECURE_PROXY_SSL_HEADE         = ('HTTP_X_FORWARDED_PROTO', 'https')
+SECURE_SSL_REDIRECT            = True
+SESSION_COOKIE_SECURE          = True
+SECURE_HSTS_SECONDS            = 1000000
+SECURE_HSTS_INCLUDE_SUBDOMAINS = True
+SECURE_FRAME_DENY              = True
+
