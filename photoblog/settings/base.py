@@ -1,6 +1,5 @@
 import os
 gettext = lambda s: s
-DATA_DIR = os.path.dirname(os.path.dirname(__file__))
 """
 Django settings for photoblog project.
 
@@ -16,8 +15,8 @@ https://docs.djangoproject.com/en/1.8/ref/settings/
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 import os
 
-#BASE_DIR = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))) 
-BASE_DIR = os.path.dirname(os.path.dirname(__file__))
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))) 
+#BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.8/howto/deployment/checklist/
@@ -67,14 +66,24 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.8/howto/static-files/
 
+#STATIC_URL = '/static/'
+#MEDIA_URL = '/media/'
+#MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+#STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+#
+#STATICFILES_DIRS = (
+#    os.path.join(BASE_DIR, 'photoblog', 'static'),
+#)
+#
 STATIC_URL = '/static/'
 MEDIA_URL = '/media/'
-MEDIA_ROOT = os.path.join(DATA_DIR, 'media')
-STATIC_ROOT = os.path.join(DATA_DIR, 'static')
-
+MEDIA_ROOT = os.path.join(BASE_DIR, 'live-static', 'media-root')
+STATIC_ROOT = os.path.join(BASE_DIR, 'live-static', 'static-root')
 STATICFILES_DIRS = (
-    os.path.join(BASE_DIR, 'photoblog', 'static'),
+    os.path.join(BASE_DIR, 'static'),
 )
+
+
 SITE_ID = 1
 
 
