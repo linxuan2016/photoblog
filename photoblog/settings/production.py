@@ -265,19 +265,18 @@ CKEDITOR_SETTINGS = {
 
 import dj_database_url
 DATABASES = {
-    "default": dj_database_url.config()
-#    'default': {
-#        'CONN_MAX_AGE': 0,
-#        'ENGINE': 'django.db.backends.sqlite3',
-#        'HOST': 'localhost',
-#        'NAME': 'project.db',
-#        'PASSWORD': '',
-#        'PORT': '',
-#        'USER': ''
-#    }
+    'default': {
+        'CONN_MAX_AGE': 0,
+        'ENGINE': 'django.db.backends.sqlite3',
+        'HOST': 'localhost',
+        'NAME': 'project.db',
+        'PASSWORD': '',
+        'PORT': '',
+        'USER': ''
+    }
 }
-#db_from_env = dj_database_url.config()
-#DATABASES['default'].update(db_from_env)
+db_from_env = dj_database_url.config()
+DATABASES['default'].update(db_from_env)
 #DATABASES['default']['CONN_MAX_AGE'] = 500
 
 MIGRATION_MODULES = {
