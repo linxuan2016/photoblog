@@ -27,12 +27,12 @@ EMAIL_HOST_USER = "mimiland.lisa.fan@gmail.com"
 EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_PASSWORD')
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
-DEFAULT_FROM_EMAIL = 'Linxuan FAN <linxuan.fan@email.com>'
+#DEFAULT_FROM_EMAIL = 'Linxuan FAN <linxuan.fan@email.com>'
 
-ADMINS = {
-    ('Linxuan', 'linxuan.fan@email.com'),
-}
-MANAGERS = ADMINS
+#ADMINS = {
+ #   ('Linxuan', 'linxuan.fan@email.com'),
+#}
+#MANAGERS = ADMINS
 
 
 
@@ -44,7 +44,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['wandefu-photoblog.herokuapp.com']
+ALLOWED_HOSTS = ['wandefu-photoblog.herokuapp.com', '0.0.0.0']
 
 
 # Application definition
