@@ -15,7 +15,7 @@ https://docs.djangoproject.com/en/1.8/ref/settings/
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 import os
 #BASE_DIR = os.path.abspath(os.path.dirname(__file__))
-PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
+#PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
 
 #BASE_DIR = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))) 
 #PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
@@ -85,11 +85,11 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 MEDIA_URL = '/media/'
-MEDIA_ROOT = os.path.join(PROJECT_ROOT, 'live-static', 'media-root')
-STATIC_ROOT = os.path.join(PROJECT_ROOT, 'live-static', 'static-root')
+MEDIA_ROOT = os.path.join(BASE_DIR, 'live-static', 'media-root')
+STATIC_ROOT = os.path.join(BASE_DIR, 'live-static', 'static-root')
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 STATICFILES_DIRS = (
-    os.path.join(PROJECT_ROOT, 'photoblog/static'),
+    os.path.join(BASE_DIR, 'static'),
 )
 SITE_ID = 1
 
