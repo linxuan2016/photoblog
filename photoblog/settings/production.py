@@ -89,7 +89,7 @@ MEDIA_ROOT = os.path.join(PROJECT_ROOT, 'live-static', 'media-root')
 STATIC_ROOT = os.path.join(PROJECT_ROOT, 'live-static', 'static-root')
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 STATICFILES_DIRS = (
-    os.path.join(PROJECT_ROOT, 'static'),
+    os.path.join(PROJECT_ROOT, 'photoblog/static'),
 )
 SITE_ID = 1
 
