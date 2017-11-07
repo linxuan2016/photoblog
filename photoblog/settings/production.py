@@ -156,7 +156,6 @@ INSTALLED_APPS = (
     'djangocms_ckeditor_filer',
     'djangocms_text_ckeditor',
     'filer',
-    'ckeditor_filebrowser_filer',
     'mptt',
     'easy_thumbnails',
     'polymorphic',
