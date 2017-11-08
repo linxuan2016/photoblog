@@ -41,9 +41,8 @@ EMAIL_USE_TLS = True
 
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = os.environ.get('SECRET_KEY')
-# SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
-
+# SECURITY WARNING: don't run with debug turned on in productionEBUG = False
+DEBUG = True
 ALLOWED_HOSTS = ['wandefu-photoblog.herokuapp.com', '0.0.0.0']
 
 
@@ -124,6 +123,7 @@ TEMPLATES = [
 
 
 MIDDLEWARE_CLASSES = (
+    'django.middleware.security.SecurityMiddleware',
     'whitenoise.middleware.WhiteNoiseMiddleware',
     'cms.middleware.utils.ApphookReloadMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -215,7 +215,7 @@ CMS_TEMPLATES = (
     ('sidebar_right.html', 'Sidebar Right'),
 )
 
-CMS_PERMISSION = True
+CMS_PERMISSIONS = True
 CMS_ENABLE_UPDATE_CHECK = False
 CMS_UPDATE_CHECK_TYPE = ('patch')
 
@@ -320,4 +320,7 @@ SESSION_COOKIE_SECURE          = True
 SECURE_HSTS_SECONDS            = 1000000
 SECURE_HSTS_INCLUDE_SUBDOMAINS = True
 SECURE_FRAME_DENY              = True
-
+CSRF_COOKIE_HTTPONLY           = True
+X_FRAME_OPTIONS                = "DENY"
+SECURE_CONTENT_TYPE_NOSNIFF    = True
+SECURE_BROWSER_XSS_FILTER      = True
