@@ -1,4 +1,4 @@
-
+photoblog/settings/local.py
 # Compiled source #
 ###################
 *.com
@@ -20,9 +20,6 @@
 *.rar
 *.tar
 *.zip
-*.jpeg
-*.jpg
-*.png
 # Logs and databases #
 ######################
 *.log
