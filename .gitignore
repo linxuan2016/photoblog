@@ -1,4 +1,3 @@
-photoblog/settings/local.py
 # Compiled source #
 ###################
 *.com
@@ -20,6 +19,9 @@ photoblog/settings/local.py
 *.rar
 *.tar
 *.zip
+*.jpeg
+*.jpg
+*.png
 # Logs and databases #
 ######################
 *.log
@@ -44,5 +46,4 @@ Thumbs.db
 *.swo
 setup.py
 src/aldryn-newsblog
-*.swn
 *.db
