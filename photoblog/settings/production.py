@@ -43,7 +43,7 @@ EMAIL_USE_TLS = True
 SECRET_KEY = os.environ.get('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in productionEBUG = False
 DEBUG = True
-ALLOWED_HOSTS = ['wandefu-photoblog.herokuapp.com', '0.0.0.0']
+ALLOWED_HOSTS = ['wandefu-photoblog.herokuapp.com', '127.0.0.1']
 
 
 # Application definition
@@ -270,13 +270,12 @@ CKEDITOR_SETTINGS = {
 import dj_database_url
 DATABASES = {
     'default': {
-        'CONN_MAX_AGE': 0,
-        'ENGINE': 'django.db.backends.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'HOST': 'localhost',
-        'NAME': 'project.db',
-        'PASSWORD': '',
+        'NAME': 'wandefu',
+        'PASSWORD': '67qquw',
         'PORT': '',
-        'USER': ''
+        'USER': 'postgres'
     }
 }
 db_from_env = dj_database_url.config()
