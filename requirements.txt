@@ -50,7 +50,7 @@ olefile==0.44
 Pillow==4.2.1
 pluggy==0.5.2
 psycopg2==2.7.3.2
-py==1.4.34
+py==1.10.0
 pyflakes==1.6.0
 pytz==2017.2
 requests==2.18.4
