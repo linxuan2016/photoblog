@@ -47,7 +47,7 @@ idna==2.6
 isodate==0.5.4
 jsonfield==2.0.2
 olefile==0.44
-Pillow==4.2.1
+Pillow==8.2.0
 pluggy==0.5.2
 psycopg2==2.7.3.2
 py==1.4.34
