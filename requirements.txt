@@ -42,7 +42,7 @@ djangocms-youtube==0.2.1
 docopt==0.6.2
 easy-thumbnails==2.3
 gunicorn==19.7.1
-html5lib==0.9999999
+html5lib==0.999999999
 idna==2.6
 isodate==0.5.4
 jsonfield==2.0.2
